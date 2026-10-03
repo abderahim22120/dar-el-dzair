@@ -6,7 +6,73 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E🍲%3C/text%3E%3C/svg%3E">
 <title>دار الجزائر | مطعم الأكل الجزائري</title>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<style>
+:root{--bg:#0e0a07;--card:#1a130d;--gold:#d4a24c;--gold2:#f3d38a;--txt:#f5ebdd;--mut:#a89683;--green:#1f7a4d;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:var(--bg);color:var(--txt);font-family:'Cairo',Tahoma,sans-serif;min-height:100vh}
+.serif{font-family:'Amiri','Times New Roman',serif}
+.hide{display:none!important}
+button{font-family:inherit;cursor:pointer}
+img{display:block}
+#home{min-height:100vh;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;background:radial-gradient(circle at 50% 35%,#3a2412 0%,var(--bg) 70%)}
+.pattern{position:absolute;inset:0;opacity:.07;background-image:repeating-conic-gradient(var(--gold) 0 25%,transparent 0 50%);background-size:46px 46px}
+.logo{position:relative;color:var(--gold);letter-spacing:4px;font-size:15px;margin-bottom:6px}
+h1{position:relative;font-size:clamp(44px,10vw,92px);color:var(--gold2);line-height:1.1;text-shadow:0 4px 30px #d4a24c55}
+.sub{position:relative;color:var(--mut);margin:10px 0 26px;font-size:clamp(15px,3vw,20px)}
+.stage{position:relative;width:min(300px,70vw);aspect-ratio:1;margin:6px 0 10px}
+.slide{position:absolute;inset:0;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 35% 30%,#4b2e16,#1a0f07 75%);border:2px solid var(--gold);box-shadow:0 0 60px #d4a24c44,inset 0 0 40px #000;opacity:0;transform:scale(.85) rotate(-8deg);transition:all .9s ease}
+.slide.on{opacity:1;transform:none}
+.slide .e{font-size:clamp(90px,24vw,130px);filter:drop-shadow(0 10px 14px #000a)}
+.slide.on .e{animation:fl 3.5s ease-in-out infinite}
+.slide img{width:100%;height:100%;object-fit:cover}
+@keyframes fl{50%{transform:translateY(-8px)}}
+.dname{position:relative;font-size:28px;color:var(--gold2);min-height:42px}
+.ddesc{position:relative;color:var(--mut);min-height:26px;margin-bottom:22px}
+.dots{position:relative;display:flex;gap:7px;justify-content:center;margin-bottom:26px}
+.dots i{width:8px;height:8px;border-radius:9px;background:#5b4630;transition:.3s}
+.dots i.on{width:26px;background:var(--gold)}
+.cta{position:relative;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#2a1a08;border:0;font-weight:700;font-size:20px;padding:15px 48px;border-radius:50px;box-shadow:0 8px 30px #d4a24c66;transition:.3s}
+.cta:hover{transform:translateY(-3px) scale(1.04)}
+.badges{position:relative;display:flex;gap:18px;flex-wrap:wrap;justify-content:center;margin-top:26px;color:var(--gold);font-size:14px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:#0e0a07ee;backdrop-filter:blur(8px);border-bottom:1px solid #3a2a1a;padding:12px 18px;display:flex;align-items:center;justify-content:space-between}
+header b{font-size:24px;color:var(--gold2)}
+.back{background:none;border:1px solid var(--gold);color:var(--gold);padding:6px 16px;border-radius:20px}
+.banner{margin:18px auto;max-width:900px;background:linear-gradient(120deg,#2a1a0c,#3b2512);border:1px solid var(--gold);border-radius:16px;padding:16px 20px;display:flex;gap:14px;align-items:center}
+.banner span{font-size:38px}
+.tabs{display:flex;gap:10px;overflow-x:auto;padding:4px 18px 14px;max-width:900px;margin:auto}
+.tab{white-space:nowrap;background:var(--card);color:var(--txt);border:1px solid #3a2a1a;padding:9px 20px;border-radius:30px;font-size:16px}
+.tab.on{background:var(--gold);color:#2a1a08;border-color:var(--gold);font-weight:700}
+.grid{max-width:900px;margin:auto;padding:0 18px 120px;display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px}
+.it{background:var(--card);border:1px solid #2e2013;border-radius:16px;padding:16px;display:flex;gap:14px;align-items:center}
+.em{font-size:46px;width:76px;height:76px;border-radius:50%;overflow:hidden;background:radial-gradient(#4b2e16,#1a0f07);display:flex;align-items:center;justify-content:center;flex:none}
+.em img{width:100%;height:100%;object-fit:cover}
+.it h3{font-size:18px;color:var(--gold2)}
+.it p{font-size:13px;color:var(--mut);margin:3px 0 8px}
+.pr{display:flex;justify-content:space-between;align-items:center}
+.pr b{color:var(--gold)}
+.add{background:var(--gold);border:0;color:#2a1a08;font-weight:700;border-radius:20px;padding:5px 16px}
+.bar{position:fixed;inset-inline:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:6;max-width:600px;margin:auto;background:var(--green);color:#fff;border:0;border-radius:50px;padding:14px 24px;font-size:17px;font-weight:700;display:flex;justify-content:space-between;box-shadow:0 8px 28px #000a}
+.ov{position:fixed;inset:0;background:#000b;z-index:10;display:flex;align-items:flex-end;justify-content:center}
+.sheet{background:#17100a;border-radius:24px 24px 0 0;border:1px solid var(--gold);width:100%;max-width:600px;max-height:92vh;overflow:auto;padding:20px 20px calc(24px + env(safe-area-inset-bottom,0px))}
+.sheet h2{color:var(--gold2);margin-bottom:12px;display:flex;justify-content:space-between}
+.x{background:none;border:0;color:var(--mut);font-size:26px}
+.row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid #2e2013;gap:8px}
+.q{display:flex;align-items:center;gap:10px}
+.q button{width:28px;height:28px;border-radius:50%;border:1px solid var(--gold);background:none;color:var(--gold);font-size:18px}
+.sum{margin:12px 0;color:var(--mut);font-size:15px}
+.sum div{display:flex;justify-content:space-between;padding:2px 0}
+.sum .t{color:var(--gold2);font-size:20px;font-weight:700;border-top:1px dashed #5b4630;margin-top:6px;padding-top:8px}
+.mode{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+.mode button{padding:11px;border-radius:12px;background:var(--card);color:var(--txt);border:1px solid #3a2a1a;font-size:15px}
+.mode button.on{border-color:var(--gold);background:#3b2512;color:var(--gold2)}
+input,textarea,select{width:100%;background:var(--card);border:1px solid #3a2a1a;color:var(--txt);padding:10px;border-radius:12px;font-family:inherit;font-size:16px;margin-top:8px}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--gold)}
+.err{color:#ff8a80;font-size:14px;min-height:20px;margin-top:6px}
+.send{width:100%;margin-top:8px;background:var(--green);color:#fff;border:0;border-radius:14px;padding:14px;font-size:18px;font-weight:700}
+.ok{text-align:center;padding:30px 10px}.ok span{font-size:70px}
+footer{text-align:center;color:var(--mut);font-size:13px;padding:20px 20px 90px}
+</style>
 </head>
 <body>
 
@@ -35,7 +101,142 @@
 
 <div class="ov hide" id="ov" onclick="if(event.target===this)closeCart()"><div class="sheet" id="sheet"></div></div>
 
-<script src="js/data.js"></script>
-<script src="js/app.js"></script>
+<script>
+// ============================================================
+//  بيانات الموقع — عدّل هنا: الأسماء، الأسعار، الصور، رقم واتساب
+// ============================================================
+// الصور: ضع الصورة داخل مجلد images ثم اكتب مسارها في الحقل img
+// مثال:  img: "images/couscous.jpg"   (إن تركته فارغاً يظهر الرمز e)
+
+const SITE = {
+  name: "دار الجزائر",
+  tag: "نكهات الجزائر الأصيلة… تصلك إلى باب بيتك",
+
+  // رقم واتساب لاستقبال الطلبات: بصيغة دولية بدون + وبدون أصفار (الجزائر تبدأ بـ 213)
+  wa: "213550000000",
+
+  fee: 200,      // رسوم التوصيل (دج)
+  free: 3000,    // توصيل مجاني للطلبات التي تفوق هذا المبلغ (دج)
+
+  // أقسام القائمة (رقم القسم c في الأطباق يبدأ من 0)
+  cats: ["المقبلات", "الأطباق الرئيسية", "الحلويات", "المشروبات"],
+
+  // صور الواجهة الافتتاحية
+  slides: [
+    {"e": "🍲", "n": "الكسكسي بالمرق", "d": "ملكة المائدة الجزائرية", "img": ""},
+    {"e": "🥘", "n": "طاجين الزيتون", "d": "طعم الأعراس والأعياد", "img": ""},
+    {"e": "🥟", "n": "البوراك", "d": "مقرمش بالجبن واللحم", "img": ""},
+    {"e": "🍯", "n": "المقروط باللوز", "d": "حلاوة الشاي والقهوة", "img": ""},
+    {"e": "🍛", "n": "الشخشوخة", "d": "أصالة الأوراس", "img": ""}
+  ],
+
+  // الأطباق: id رقم فريد، c رقم القسم، n الاسم، d الوصف، p السعر بالدينار
+  items: [
+    {"id": 1, "c": 0, "e": "🥟", "img": "", "n": "بوراك (4 قطع)", "d": "بالجبن أو اللحم المفروم", "p": 300},
+    {"id": 2, "c": 0, "e": "🍲", "img": "", "n": "شوربة فريك", "d": "بالدجاج والكزبرة", "p": 350},
+    {"id": 3, "c": 0, "e": "🫓", "img": "", "n": "محاجب", "d": "بالطماطم والفلفل", "p": 150},
+    {"id": 4, "c": 0, "e": "🥗", "img": "", "n": "سلطة مشوية", "d": "فلفل وطماطم مشوية", "p": 250},
+    {"id": 5, "c": 1, "e": "🍲", "img": "", "n": "كسكسي باللحم", "d": "بالخضر واللحم والحمص", "p": 900},
+    {"id": 6, "c": 1, "e": "🍛", "img": "", "n": "شخشوخة", "d": "رقاق بالمرق واللحم", "p": 800},
+    {"id": 7, "c": 1, "e": "🍜", "img": "", "n": "رشتة", "d": "بالدجاج واللفت والحمص", "p": 750},
+    {"id": 8, "c": 1, "e": "🥘", "img": "", "n": "طاجين الزيتون", "d": "دجاج بالزيتون والمشمش", "p": 850},
+    {"id": 9, "c": 1, "e": "🍅", "img": "", "n": "دولمة", "d": "خضر محشوة باللحم", "p": 700},
+    {"id": 10, "c": 2, "e": "🍯", "img": "", "n": "مقروط (6 قطع)", "d": "بالتمر والعسل", "p": 400},
+    {"id": 11, "c": 2, "e": "🥮", "img": "", "n": "قلب اللوز", "d": "بالعسل وماء الزهر", "p": 500},
+    {"id": 12, "c": 2, "e": "🍰", "img": "", "n": "بقلاوة", "d": "باللوز والفستق", "p": 450},
+    {"id": 13, "c": 3, "e": "🍵", "img": "", "n": "شاي بالنعناع", "d": "إبريق تقليدي", "p": 100},
+    {"id": 14, "c": 3, "e": "☕", "img": "", "n": "قهوة", "d": "قهوة عربية", "p": 100},
+    {"id": 15, "c": 3, "e": "🥤", "img": "", "n": "عصير طبيعي", "d": "ليمون أو برتقال", "p": 150}
+  ]
+};
+
+// دار الجزائر — منطق الموقع (العرض + السلة + إرسال الطلب عبر واتساب)
+// لا تحتاج لتعديل هذا الملف: كل المحتوى في data.js
+const S = SITE; // البيانات من ملف data.js
+let cart = {}, cat = 0, mode = "delivery", si = 0, timer = null;
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const vis = x => x.img ? `<img src="${x.img}" alt="">` : esc(x.e);
+const find = id => S.items.find(x => x.id === id);
+const sub = () => Object.entries(cart).reduce((s,[id,q]) => s + find(+id).p*q, 0);
+const cnt = () => Object.values(cart).reduce((a,b) => a+b, 0);
+const fee = () => mode==="delivery" && sub() < S.free ? S.fee : 0;
+
+// ===== العرض =====
+function render(){
+  document.title = S.name + " | مطعم الأكل الجزائري";
+  $("hn").textContent = S.name; $("hb").textContent = S.name; $("hs").textContent = S.tag;
+  $("bn").textContent = `رسوم التوصيل ${S.fee} دج — مجاني للطلبات فوق ${S.free} دج`;
+  $("stage").innerHTML = S.slides.map(s => `<div class="slide">${s.img ? `<img src="${s.img}" alt="">` : `<div class="e">${esc(s.e)}</div>`}</div>`).join("");
+  $("dots").innerHTML = S.slides.map(() => "<i></i>").join("");
+  si = 0; show(0);
+  clearInterval(timer); timer = setInterval(() => { si = (si+1) % S.slides.length; show(si) }, 3500);
+  if (cat >= S.cats.length) cat = 0;
+  renderTabs(); renderGrid(); upd();
+}
+function show(i){
+  document.querySelectorAll(".slide").forEach((el,k) => el.classList.toggle("on", k===i));
+  document.querySelectorAll(".dots i").forEach((el,k) => el.classList.toggle("on", k===i));
+  const s = S.slides[i]; if (s) { $("dn").textContent = s.n; $("dd").textContent = s.d }
+}
+function go(v){
+  $("home").classList.toggle("hide", v!=="home");
+  $("menu").classList.toggle("hide", v!=="menu");
+  window.scrollTo(0,0);
+}
+function renderTabs(){
+  $("tabs").innerHTML = S.cats.map((c,i) => `<button class="tab ${i===cat?"on":""}" onclick="cat=${i};renderTabs();renderGrid()">${esc(c)}</button>`).join("");
+}
+function renderGrid(){
+  $("grid").innerHTML = S.items.filter(x => x.c===cat).map(x => `
+   <div class="it"><div class="em">${vis(x)}</div><div style="flex:1"><h3>${esc(x.n)}</h3><p>${esc(x.d)}</p>
+   <div class="pr"><b>${x.p} دج</b><button class="add" onclick="add(${x.id})">+ أضف</button></div></div></div>`).join("");
+}
+function add(id){ cart[id] = (cart[id]||0)+1; upd() }
+function chg(id,d){ cart[id] += d; if (cart[id] <= 0) delete cart[id]; upd(); if (!cnt()) closeCart(); else openCart(true) }
+function upd(){
+  Object.keys(cart).forEach(id => { if (!find(+id)) delete cart[id] });
+  $("bar").classList.toggle("hide", !cnt());
+  $("bc").textContent = cnt(); $("bt").textContent = sub() + " دج";
+}
+
+// ===== السلة والطلب =====
+function openCart(keep){
+  const old = keep ? ["nm","ph","ad","nt"].map(i => $(i) ? $(i).value : "") : ["","","",""];
+  $("sheet").innerHTML = `
+   <h2 class="serif">سلة الطلب <button class="x" onclick="closeCart()">×</button></h2>
+   ${Object.entries(cart).map(([id,q]) => { const x = find(+id); return `<div class="row"><span>${esc(x.e)} ${esc(x.n)}</span>
+     <span class="q"><button onclick="chg(${id},-1)">−</button><b>${q}</b><button onclick="chg(${id},1)">+</button></span>
+     <span style="color:var(--gold)">${x.p*q} دج</span></div>` }).join("")}
+   <div class="mode"><button class="${mode==="delivery"?"on":""}" onclick="setMode('delivery')">🛵 توصيل للمنزل</button>
+   <button class="${mode==="pickup"?"on":""}" onclick="setMode('pickup')">🏪 استلام من المحل</button></div>
+   <div class="sum"><div><span>المجموع</span><span>${sub()} دج</span></div>
+   <div><span>التوصيل</span><span>${mode==="pickup" ? "—" : fee() ? fee()+" دج" : "مجاني"}</span></div>
+   <div class="t"><span>الإجمالي</span><span>${sub()+fee()} دج</span></div></div>
+   <input id="nm" placeholder="الاسم الكامل" value="${esc(old[0])}">
+   <input id="ph" type="tel" inputmode="tel" placeholder="رقم الهاتف" value="${esc(old[1])}">
+   <input id="ad" placeholder="العنوان الكامل للتوصيل" class="${mode==="pickup"?"hide":""}" value="${esc(old[2])}">
+   <textarea id="nt" rows="2" placeholder="ملاحظات (اختياري)">${esc(old[3])}</textarea>
+   <div class="err" id="er"></div>
+   <button class="send" onclick="send()">✅ تأكيد الطلب عبر واتساب</button>`;
+  $("ov").classList.remove("hide");
+}
+function closeCart(){ $("ov").classList.add("hide") }
+function setMode(m){ mode = m; openCart(true) }
+function send(){
+  const nm = $("nm").value.trim(), ph = $("ph").value.trim(), ad = $("ad").value.trim(), nt = $("nt").value.trim();
+  if (!nm) return $("er").textContent = "الرجاء إدخال الاسم";
+  if (!/^[0-9+\s]{9,15}$/.test(ph)) return $("er").textContent = "رقم الهاتف غير صحيح";
+  if (mode==="delivery" && !ad) return $("er").textContent = "الرجاء إدخال عنوان التوصيل";
+  const lines = Object.entries(cart).map(([id,q]) => `• ${find(+id).n} × ${q} = ${find(+id).p*q} دج`).join("\n");
+  const msg = `🍽️ طلب جديد - ${S.name}\n\n${lines}\n\nالمجموع: ${sub()} دج\nالتوصيل: ${mode==="pickup" ? "استلام من المحل" : fee()+" دج"}\nالإجمالي: ${sub()+fee()} دج\n\n👤 ${nm}\n📞 ${ph}\n${mode==="delivery" ? "📍 "+ad : "🏪 استلام من المحل"}${nt ? "\n📝 "+nt : ""}`;
+  window.open("https://wa.me/" + S.wa + "?text=" + encodeURIComponent(msg), "_blank");
+  $("sheet").innerHTML = `<div class="ok"><span>🎉</span><h2 class="serif" style="justify-content:center">شكراً ${esc(nm)}!</h2>
+   <p style="color:var(--mut)">تم تجهيز طلبك، أكمل الإرسال في واتساب وسنتصل بك للتأكيد.</p>
+   <button class="send" onclick="cart={};upd();closeCart()">رجوع إلى القائمة</button></div>`;
+}
+
+render();
+</script>
 </body>
 </html>
